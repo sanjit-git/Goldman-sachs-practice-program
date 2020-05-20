@@ -1,0 +1,50 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    static int laticeCount(int r)
+    {
+       if(r<=0)
+       return 0;
+       int result=4;
+       for(int x=1;x<r;x++)
+       {
+           int ySquare=r*r-x*x;
+           int y=(int)Math.sqrt(ySquare);
+           if(y*y==ySquare)
+           result+=4;
+       }
+       return result;
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		
+		int r = 3; 
+    System.out.println(laticeCount(r)); 
+		
+	}
+}
+
+
+
+
+Circle and Lattice Points
+
+Given a circle of radius r in 2-D with origin or (0, 0) as center. The task is to find the total lattice points on circumference. Lattice Points are points with coordinates as integers in 2-D space.
+
+Example:
+
+Input  : r = 5.
+Output : 12
+Below are lattice points on a circle with
+radius 5 and origin as (0, 0).
+(0,5), (0,-5), (5,0), (-5,0),
+(3,4), (-3,4), (-3,-4), (3,-4),
+(4,3), (-4,3), (-4,-3), (4,-3).
+are 12 lattice point.
